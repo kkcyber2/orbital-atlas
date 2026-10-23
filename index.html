@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Orbital Atlas — a scroll-driven solar system</title>
+<meta name="description" content="Scroll to fly through the solar system. Hand-written WebGL, no dependencies.">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<canvas id="stage" aria-hidden="true"></canvas>
+
+<header class="hud">
+  <div class="hud__brand">
+    <span class="hud__mark"></span>
+    <span>Orbital Atlas</span>
+  </div>
+  <div class="hud__readout">
+    <span id="readout-body">Sun</span>
+    <span class="hud__sep">/</span>
+    <span id="readout-distance">0.00 AU</span>
+  </div>
+</header>
+
+<nav class="rail" aria-label="Bodies">
+  <ol id="rail-list"></ol>
+</nav>
+
+<main class="track" id="track">
+  <section class="panel" data-body="sun">
+    <p class="panel__index">00</p>
+    <h1 class="panel__title">The Sun</h1>
+    <p class="panel__lede">A G-type main-sequence star holding 99.86% of the system's mass.</p>
+    <dl class="panel__facts">
+      <div><dt>Radius</dt><dd>696,340 km</dd></div>
+      <div><dt>Surface</dt><dd>5,772 K</dd></div>
+      <div><dt>Rotation</dt><dd>25.4 days</dd></div>
+    </dl>
+  </section>
+
+  <section class="panel" data-body="mercury">
+    <p class="panel__index">01</p>
+    <h2 class="panel__title">Mercury</h2>
+    <p class="panel__lede">The smallest planet, and the fastest — one orbit every 88 days.</p>
+    <dl class="panel__facts">
+      <div><dt>Orbit</dt><dd>88 days</dd></div>
+      <div><dt>Radius</dt><dd>2,440 km</dd></div>
+      <div><dt>Day</dt><dd>176 Earth days</dd></div>
+    </dl>
+  </section>
+
+  <section class="panel" data-body="venus">
+    <p class="panel__index">02</p>
+    <h2 class="panel__title">Venus</h2>
+    <p class="panel__lede">A runaway greenhouse: 92 bar of pressure at 737 K.</p>
+    <dl class="panel__facts">
+      <div><dt>Orbit</dt><dd>225 days</dd></div>
+      <div><dt>Radius</dt><dd>6,052 km</dd></div>
+      <div><dt>Day</dt><dd>243 Earth days</dd></div>
+    </dl>
+  </section>
+
+  <section class="panel" data-body="earth">
+    <p class="panel__index">03</p>
+    <h2 class="panel__title">Earth</h2>
+    <p class="panel__lede">The only body in the system with liquid surface water.</p>
+    <dl class="panel__facts">
+      <div><dt>Orbit</dt><dd>365.25 days</dd></div>
+      <div><dt>Radius</dt><dd>6,371 km</dd></div>
+      <div><dt>Day</dt><dd>23h 56m</dd></div>
+    </dl>
+  </section>
+
+  <section class="panel" data-body="mars">
+    <p class="panel__index">04</p>
+    <h2 class="panel__title">Mars</h2>
+    <p class="panel__lede">Home to Olympus Mons, the tallest volcano in the system.</p>
+    <dl class="panel__facts">
+      <div><dt>Orbit</dt><dd>687 days</dd></div>
+      <div><dt>Radius</dt><dd>3,390 km</dd></div>
+      <div><dt>Day</dt><dd>24h 37m</dd></div>
+    </dl>
+  </section>
+
+  <section class="panel" data-body="jupiter">
+    <p class="panel__index">05</p>
+    <h2 class="panel__title">Jupiter</h2>
+    <p class="panel__lede">More massive than every other planet combined.</p>
+    <dl class="panel__facts">
+      <div><dt>Orbit</dt><dd>11.86 years</dd></div>
+      <div><dt>Radius</dt><dd>69,911 km</dd></div>
+      <div><dt>Day</dt><dd>9h 56m</dd></div>
+    </dl>
+  </section>
+
+  <section class="panel" data-body="saturn">
+    <p class="panel__index">06</p>
+    <h2 class="panel__title">Saturn</h2>
+    <p class="panel__lede">A ring system 280,000 km across and, in places, ten metres thick.</p>
+    <dl class="panel__facts">
+      <div><dt>Orbit</dt><dd>29.46 years</dd></div>
+      <div><dt>Radius</dt><dd>58,232 km</dd></div>
+      <div><dt>Day</dt><dd>10h 42m</dd></div>
+    </dl>
+  </section>
+
+  <section class="panel" data-body="uranus">
+    <p class="panel__index">07</p>
+    <h2 class="panel__title">Uranus</h2>
+    <p class="panel__lede">Tipped 98° — it orbits on its side.</p>
+    <dl class="panel__facts">
+      <div><dt>Orbit</dt><dd>84 years</dd></div>
+      <div><dt>Radius</dt><dd>25,362 km</dd></div>
+      <div><dt>Day</dt><dd>17h 14m</dd></div>
+    </dl>
+  </section>
+
+  <section class="panel" data-body="neptune">
+    <p class="panel__index">08</p>
+    <h2 class="panel__title">Neptune</h2>
+    <p class="panel__lede">Winds reach 2,100 km/h, the fastest measured anywhere.</p>
+    <dl class="panel__facts">
+      <div><dt>Orbit</dt><dd>164.8 years</dd></div>
+      <div><dt>Radius</dt><dd>24,622 km</dd></div>
+      <div><dt>Day</dt><dd>16h 6m</dd></div>
+    </dl>
+  </section>
+</main>
+
+<footer class="hint" id="hint">
+  <span class="hint__key">scroll</span> to fly through the system
+</footer>
+
+<script type="module" src="js/main.js"></script>
+</body>
+</html>
